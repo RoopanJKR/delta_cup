@@ -21,7 +21,7 @@
    <!--   usb_cam node, as pixel_format use yuyv or mjpeg -->
    <group if="$(arg use_camera)" >
   <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen">
-    <param name="video_device" value="/dev/video2" />
+    <param name="video_device" value="/dev/video0" />
     <param name="image_width" value="$(arg image_width)" />
     <param name="image_height" value="$(arg image_height)" />
     <param name="framerate" value="60" />
@@ -85,5 +85,5 @@
    <group if="$(arg use_rviz)" >
         <node pkg="rviz" type="rviz" name="markers_extrinsic" args="-d $(find aruco_detector_ocv)/config/aruco_opencv.rviz"/>
 </group>
-<node pkg="tf2_ros" type="static_transform_publisher" name="usbcamstatictf" args="-1.8 1.6 3.62 3.14 -3.14 0 usb_cam world"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="usbcamstatictf" args="-1.8 1.6 1.6 3.14 -3.14 0 usb_cam world"/>
 </launch>

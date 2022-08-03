@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="warehouse">
+    <static>true</static>
+    <pose>0 0 0 0 0 -3.14 </pose>
+
+    <link name="warehouse">
+        <pose>0 0 0.02 0 0 0</pose>
+    <collision name="collision">
+        <geometry>
+          <mesh>
+              <uri>model://warehouse/meshes/SimWarehouse.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+    <visual name="visual">
+        <geometry>
+          <mesh>
+                  <uri>model://warehouse/meshes/SimWarehouse.dae</uri>
+                  <lighting>1</lighting>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

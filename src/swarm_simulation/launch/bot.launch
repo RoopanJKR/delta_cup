@@ -1,0 +1,14 @@
+<launch>
+        <arg name="robot_name" />
+        <arg name="init_pose" />
+        <arg name="xacro_name" />
+
+        <!-- Load the URDF into the ROS Parameter Server -->
+        <param name="robot_description" command="$(find xacro)/xacro '$(find swarm_simulation)/urdf/$(arg xacro_name).xacro'" />
+
+        <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" ns="/$(arg robot_name)">
+                <param name="tf_prefix" value="$(arg robot_name)" />
+        </node>
+
+
+</launch>

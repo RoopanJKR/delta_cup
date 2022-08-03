@@ -1,0 +1,47 @@
+<launch>
+
+
+  <group ns="redbot">
+    <param name="tf_prefix" value="redbot_tf" />
+    <include file="$(find swarm_simulation)/launch/bot.launch">
+      <arg name="init_pose" value="-x 1.141758 -y -0.384614 -z 0.131826 -Y 1.570000" />
+      <arg name="robot_name" value="redbot" />
+      <arg name="xacro_name" value="redbot" />
+    </include>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="bot_1" args="0.07 0.07 0.17 0 0 0  marker_id1 /redbot/dummy"/>
+  </group>
+
+  <group ns="greybot">
+    <param name="tf_prefix" value="greybot_tf" />
+    <include file="$(find swarm_simulation)/launch/bot.launch">
+      <arg name="init_pose" value="-x 1.141758 -y 0.393045 -z 0.131826 -Y 1.570000" />
+      <arg name="robot_name" value="greybot" />
+      <arg name="xacro_name" value="greybot" />
+    </include>
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="bot_1" args="0.07 0.07 0.17 0 0 0 marker_2 /$(tf_prefix)/base_link"/> -->
+  </group>
+
+  <group ns="greenbot">
+    <param name="tf_prefix" value="greenbot_tf" />
+    <include file="$(find swarm_simulation)/launch/bot.launch">
+      <arg name="init_pose" value="-x 0.960448 -y 0.980893 -z 0.131826 -Y 1.570000" />
+      <arg name="robot_name" value="greenbot" />
+      <arg name="xacro_name" value="greenbot" />
+    </include>
+  </group>
+
+  <group ns="bluebot">
+    <param name="tf_prefix" value="greenbot_tf" />
+    <include file="$(find swarm_simulation)/launch/bot.launch">
+      <arg name="init_pose" value="-x 0.971374 -y -0.963554 -z 0.131826 -Y 1.570000" />
+      <arg name="robot_name" value="bluebot" />
+      <arg name="xacro_name" value="bluebot" />
+    </include>
+  </group>
+
+</launch>
+
+
+<!-- 0.883122 y 0.904034
+
+0.881553 y -1.065827 -->
